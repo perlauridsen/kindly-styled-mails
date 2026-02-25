@@ -33,7 +33,7 @@ const EmailTemplate = () => {
               }}
             >
               <img
-                src="/images/logo.png"
+                src="/images/logo-white.png"
                 alt="Altoure Automotive"
                 width={220}
                 style={{ display: 'block', margin: '0 auto' }}

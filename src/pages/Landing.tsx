@@ -293,7 +293,7 @@ const Landing = () => {
                   </div>
                   <div>
                     <p className="text-sm opacity-50">Phone</p>
-                    <a href="tel:+31201234567" className="hover:text-primary transition-colors">+31 (0)20 123 4567</a>
+                    <a href="tel:+32478279658" className="hover:text-primary transition-colors">+32 478 27 96 58</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -302,7 +302,7 @@ const Landing = () => {
                   </div>
                   <div>
                     <p className="text-sm opacity-50">Location</p>
-                    <p>Amsterdam, The Netherlands</p>
+                    <p>Bruges, Belgium</p>
                   </div>
                 </div>
               </div>

@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Car, TrendingUp, Shield, Clock, Mail, Phone, MapPin, ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-cars.jpg";
 import carsLot from "@/assets/cars-lot.jpg";
 import carHandover from "@/assets/car-handover.jpg";
+import HeroSlider from "@/components/HeroSlider";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -56,7 +56,7 @@ const Landing = () => {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Modern car showroom" className="w-full h-full object-cover" />
+          <HeroSlider />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-foreground" />
         </div>
 

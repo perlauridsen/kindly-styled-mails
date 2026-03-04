@@ -22,9 +22,25 @@ const Landing = () => {
   const [company, setCompany] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSignup = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      const response = await fetch("http://dev.altoure.com/webform", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, company, email }),
+      });
+      if (!response.ok) throw new Error("Request failed");
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollTo = (id: string) => {
@@ -250,9 +266,10 @@ const Landing = () => {
                 />
                 <Button
                   type="submit"
+                  disabled={submitting}
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 rounded-xl text-base"
                 >
-                  Join the Waitlist
+                  {submitting ? "Submitting..." : "Join the Waitlist"}
                 </Button>
                 <p className="text-xs opacity-40 text-center">We respect your privacy. Unsubscribe anytime.</p>
               </motion.form>

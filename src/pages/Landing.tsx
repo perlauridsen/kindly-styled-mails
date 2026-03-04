@@ -28,7 +28,7 @@ const Landing = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const response = await fetch("http://dev.altoure.com/webform", {
+      const response = await fetch("https://dev.altoure.com/webform", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, company, email }),
